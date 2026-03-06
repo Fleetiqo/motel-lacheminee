@@ -1,0 +1,143 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 60px 60px;
+}
+
+.hero__slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.hero__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero__slide.active {
+  opacity: 1;
+}
+
+.hero__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(74, 44, 46, 0.75) 0%, rgba(120, 66, 69, 0.65) 100%);
+  z-index: -1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+  color: white;
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero__content h1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.5px;
+}
+
+.hero__description {
+  font-size: 19px;
+  line-height: 1.9;
+  margin-bottom: 48px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero__cta {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-gold) 0%, #c9a030 100%);
+  color: var(--dark-brown);
+  padding: 18px 48px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.hero__cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5);
+}
+
+.hero__contact {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px);
+  padding: 28px 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.hero__contact p {
+  font-size: 15px;
+  color: white;
+  margin: 8px 0;
+}
+
+.hero__contact strong {
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 100px 24px 40px;
+  }
+
+  .hero__content h1 {
+    font-size: 36px;
+  }
+
+  .hero__description {
+    font-size: 16px;
+  }
+
+  .hero__cta {
+    padding: 16px 40px;
+    font-size: 15px;
+  }
+
+  .hero__contact {
+    padding: 20px 24px;
+  }
+}

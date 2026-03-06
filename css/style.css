@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+@import url("sections/header.css");
+@import url("sections/hero.css");
+@import url("sections/accommodations.css");
+@import url("sections/packages.css");
+@import url("sections/facilities.css");
+@import url("sections/location.css");
+@import url("sections/cta.css");
+@import url("sections/footer.css");
+
+:root {
+  --montserrat: "Montserrat", sans-serif;
+  --playfair: "Playfair Display", serif;
+
+  --primary-burgundy: #784245;
+  --secondary-burgundy: #8b5456;
+  --accent-gold: #d4af37;
+  --dark-brown: #4a2c2e;
+  --light-cream: #f8f4f0;
+  --snow-white: #f8f9fa;
+  --text-dark: #2c3e50;
+  --text-medium: #5a6c7d;
+  --text-light: #8b9aa8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--snow-white);
+  font-family: var(--montserrat);
+  color: var(--text-dark);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-gold);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--playfair);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 48px;
+  color: var(--dark-brown);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-medium);
+  line-height: 1.8;
+}
+
+button {
+  font-family: var(--montserrat);
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+section {
+  position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 36px;
+  }
+  
+  p {
+    font-size: 15px;
+  }
+}
