@@ -78,7 +78,7 @@
 .facilities__gallery {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 28px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -87,9 +87,10 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 3px solid white;
+  border: 4px solid rgba(120, 66, 69, 0.1);
+  background: white;
 }
 
 .gallery__item:hover {

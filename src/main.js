@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Hero slideshow
+// Hero slideshow with smooth transitions
 let currentSlide = 0;
 const slides = document.querySelectorAll('.hero__slide');
 
@@ -26,10 +26,19 @@ function nextSlide() {
   showSlide(currentSlide);
 }
 
-// Change slide every 5 seconds
+// Change slide every 6 seconds for better viewing
 if (slides.length > 0) {
-  setInterval(nextSlide, 5000);
+  setInterval(nextSlide, 6000);
 }
+
+// Preload images for smoother transitions
+slides.forEach(slide => {
+  const bgImage = slide.style.backgroundImage;
+  if (bgImage) {
+    const img = new Image();
+    img.src = bgImage.slice(5, -2); // Extract URL from url("...")
+  }
+});
 
 // Update copyright year
 const yearSpan = document.getElementById('copyright-year');
@@ -49,4 +58,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
   });
+});
+
+// Add scroll reveal animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observe accommodation cards, features, and gallery items
+document.querySelectorAll('.accommodation__card, .feature__item, .gallery__item, .info__item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// Add loading state
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
 });

@@ -26,8 +26,15 @@
 
 .accommodations__content h2 {
   text-align: left;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
   color: var(--primary-burgundy);
+}
+
+.accommodations__intro {
+  font-size: 17px;
+  color: var(--text-medium);
+  margin-bottom: 48px;
+  line-height: 1.7;
 }
 
 .accommodations__grid {
@@ -91,6 +98,8 @@
   font-size: 15px;
   color: var(--text-medium);
   padding: 0 28px 20px;
+  line-height: 1.6;
+  min-height: 48px;
 }
 
 .accommodation__card .card__link {
