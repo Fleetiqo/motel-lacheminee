@@ -86,9 +86,22 @@ section {
   position: relative;
 }
 
-/* Smooth scroll offset for fixed header */
 html {
   scroll-padding-top: 100px;
+}
+
+/* Smooth animations */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Improve text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Selection colors */
